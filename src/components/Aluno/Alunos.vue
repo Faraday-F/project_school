@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{titulo}}</h1>
+    <Titulo class="header" texto="Alunos.com"/>
     <div>
 
       <input class="input" type="text" placeholder="Nome do aluno" v-model="nome"
@@ -39,7 +39,13 @@
 </template>
 
 <script>
+import TituloVue from '../_share/Titulo.vue';
+import Titulo from '../_share/Titulo.vue';
 export default {
+  components: {
+    Titulo,
+    Titulo
+},
 
   data() {
     return{

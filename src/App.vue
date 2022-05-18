@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Alunos from './components/Alunos.vue'
+import Alunos from './components/Aluno/Alunos.vue'
 
 export default {
   name: 'App',
@@ -80,6 +80,13 @@ table {
   padding: 0px;
   list-style-type: none;
   width: 100%;
+}
+
+.header {
+  border: 1px solid black;
+  justify-items: center;
+  background-color: #ffffff;
+  
 }
 
 table tr td{
