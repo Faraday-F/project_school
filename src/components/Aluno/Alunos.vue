@@ -51,16 +51,12 @@ export default {
     return{
       titulo: 'Alunos.com.br',
       nome: '',
-      alunos: [
-      {id: 0, nome: 'Roberta'},
-      {id: 1, nome: 'Luiz'},
-      {id: 2, nome: 'Giovana'}
-      ]
+      alunos: []
     };
   },
   created() {
     this.$http
-    .GET('http://localhost:3000/alunos')
+    .get('http://localhost:3000/alunos')
     .then(res => res.json())
     .then(alunos => this.alunos = alunos)
 
