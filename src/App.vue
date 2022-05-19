@@ -52,7 +52,7 @@ body, html {
 }
 
 .btn_add{
-  background-color: #42ca3e;
+  background-color: #38f3b5;
   border: 1px solid black;
   padding: 10px 20px;
   cursor: pointer;
@@ -60,6 +60,7 @@ body, html {
   font-weight: bold;
   border-radius: 5px;
   border-bottom: 3px solid black; 
+  
 }
 
 .btn_add:hover{

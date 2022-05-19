@@ -56,8 +56,17 @@ export default {
       {id: 1, nome: 'Luiz'},
       {id: 2, nome: 'Giovana'}
       ]
-    }
+    };
   },
+  created() {
+    this.$http
+    .GET('http://localhost:3000/alunos')
+    .then(res => res.json())
+    .then(alunos => this.alunos = alunos)
+
+  },
+
+  props: {},
   methods: {
     addaluno() {
         let _aluno = {
