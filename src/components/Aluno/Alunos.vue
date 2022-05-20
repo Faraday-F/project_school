@@ -66,15 +66,29 @@ export default {
   methods: {
     addaluno() {
         let _aluno = {
-        nome: this.nome
+        nome: this.nome,
+        sobrenome: ""
         }
+
+        this.$http
+    .post('http://localhost:3000/alunos', _aluno)
+    .then(res => res.json())
+
         this.alunos.push(_aluno);
-        this.nome = '';
-      
+        this.nome = '';  
+            
     },
+        
+
     remover(aluno) {
       let indice = this.alunos.indexOf(aluno);
       this.alunos.splice(indice, 1)
+      this.$http
+    .delete(`http://localhost:3000/alunos${aluno.id}`)
+    .then(
+      
+    )
+      
 
     },
   },
