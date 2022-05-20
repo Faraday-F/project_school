@@ -4,9 +4,14 @@
     <div>
 
       <input class="input" type="text" placeholder="Nome do aluno" v-model="nome"
-    v-on:keyup.enter="addaluno()"><button class="btn_add" @click="addaluno">
+    v-on:keyup.enter="addaluno()">
+
+      <input class="input" type="text" placeholder="Sobrenome" v-model="sobrenome"
+    v-on:keyup.enter="addaluno">
+
+      <button class="btn_add" @click="addaluno">
       ADD
-    </button>
+      </button>
 
     </div>
     
@@ -14,15 +19,18 @@
 
     <table border="2px">
       <thead>
-        <th>Matricula</th>
+        <th>ID</th>
         <th>Nome</th>
+        <th>sobrenome</th>
         <th>Opçoes</th>
+        
+        
       </thead>
       <tbody v-if="alunos.length">
         <tr v-for="(aluno, index) in alunos" :key="index">
-          <td>{{index+1}}</td>
-          <!--td>{{aluno.id}}</!--td -->
+          <td>{{aluno.id}}</td>
           <td>{{aluno.nome}}</td>
+          <th>{{aluno.sobrenome}}</th>
           <td>
             <button class="btn" @click="remover(aluno)">Remover
             </button>
@@ -51,6 +59,7 @@ export default {
     return{
       titulo: 'Alunos.com.br',
       nome: '',
+      sobrenome:'',
       alunos: []
     };
   },
@@ -67,34 +76,42 @@ export default {
     addaluno() {
         let _aluno = {
         nome: this.nome,
-        sobrenome: ""
+        sobrenome: this.sobrenome
         }
 
         this.$http
     .post('http://localhost:3000/alunos', _aluno)
     .then(res => res.json())
+    .then(alunoRetornado => {
+      this.alunos.push(alunoRetornado);
+        this.nome = '';
+    }
 
-        this.alunos.push(_aluno);
-        this.nome = '';  
+    )
+
+          
             
     },
+
+
         
 
     remover(aluno) {
+      
+      
+      this.$http
+    .delete(`http://localhost:3000/alunos/${aluno.id}`)
+    .then(() => {
       let indice = this.alunos.indexOf(aluno);
       this.alunos.splice(indice, 1)
-      this.$http
-    .delete(`http://localhost:3000/alunos${aluno.id}`)
-    .then(
-      
+    }      
     )
       
 
     },
   },
   
-  props: {
-  }
+
 }
 </script>
 
