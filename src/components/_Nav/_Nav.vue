@@ -22,6 +22,7 @@
 
 nav {
     padding: 20px 20px 20px 0px;
+    
 }
 
 nav a {

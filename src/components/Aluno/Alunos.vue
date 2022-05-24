@@ -22,7 +22,7 @@
         <th>ID</th>
         <th>Nome</th>
         <th>sobrenome</th>
-        <th>Opçoes</th>
+        <th class="opt">Opçoes</th>
         
         
       </thead>
@@ -115,5 +115,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.opt {
+  background-color: black;
+}
 
 </style>
