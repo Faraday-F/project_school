@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Titulo class="header" texto="Alunos.com"/>
+    <Titulo class="header" texto="Alunos"/>
     <div>
 
       <input class="input" type="text" placeholder="Nome do aluno" v-model="nome"
@@ -10,14 +10,14 @@
     v-on:keyup.enter="addaluno">
 
       <button class="btn_add" @click="addaluno">
-      ADD
+      Adicionar
       </button>
 
     </div>
     
     
 
-    <table border="2px">
+    <table>
       <thead>
         <th>ID</th>
         <th>Nome</th>
@@ -47,17 +47,15 @@
 </template>
 
 <script>
-import TituloVue from '../_share/Titulo.vue';
 import Titulo from '../_share/Titulo.vue';
 export default {
   components: {
-    Titulo,
     Titulo
 },
 
   data() {
     return{
-      titulo: 'Alunos.com.br',
+      titulo: 'Alunos',
       nome: '',
       sobrenome:'',
       alunos: []

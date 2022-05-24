@@ -1,16 +1,21 @@
 <template>
-  <div id="app">   
-    <Alunos/>
+  <div id="app">  
+    <Nav></Nav>
+    <div class="marginPrincipal">
+      <Alunos/>
+    </div>    
   </div>
 </template>
 
 <script>
 import Alunos from './components/Aluno/Alunos.vue'
+import Nav from './components/_Nav/_Nav.vue'
 
 export default {
   name: 'App',
   components: {
-    Alunos
+    Alunos,
+    Nav
   }
 }
 </script>
@@ -29,8 +34,14 @@ body, html {
   height: 100%;
 }
 
+.marginPrincipal{
+  width: 50%;
+  margin: auto;
+}
+
 #app {
-  
+  width: 100%;
+
 }
 
 .btn{
@@ -84,9 +95,8 @@ table {
 }
 
 .header {
-  border: 1px solid black;
   justify-items: center;
-  background-color: #ffffff;
+  background-color: #eee;
   
 }
 
@@ -108,7 +118,7 @@ table tr td:hover {
 }
 
 table thead th {
-  background-color: rgb(89, 156, 243) !important;
+  background-color: rgb(129, 184, 255) !important;
   font-size: 1.2em;
   padding: 10px 0px;
   text-align: center !important;

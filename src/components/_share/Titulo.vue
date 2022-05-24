@@ -15,11 +15,6 @@
 
 <style scoped>
 
-h1 {
-    border: 1px solid black;
-    text-align: center;
-    text-shadow: 10px solid black;
-}
     
 
 </style>
