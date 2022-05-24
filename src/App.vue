@@ -40,8 +40,7 @@ body, html {
 }
 
 #app {
-  
-
+  width: 100%;
 }
 
 .btn{
