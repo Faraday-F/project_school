@@ -2,7 +2,7 @@
   <div id="app">  
     <Nav></Nav>
     <div class="marginPrincipal">
-      <Alunos/>
+      <Sobre/>
     </div>    
   </div>
 </template>
@@ -10,11 +10,16 @@
 <script>
 import Alunos from './components/Aluno/Alunos.vue'
 import Nav from './components/_Nav/_Nav.vue'
+import Professor from './components/Professor/Professor.vue'
+import Sobre from './components/Sobre/Sobre.vue'
+
 
 export default {
   name: 'App',
   components: {
     Alunos,
+    Professor,
+    Sobre,
     Nav
   }
 }
@@ -62,14 +67,14 @@ body, html {
 }
 
 .btn_add{
-  background-color: #38f3b5;
-  border: 1px solid black;
+  border: none;
+  width: 150px;
+  background-color: #494949;
   padding: 10px 20px;
   cursor: pointer;
   color: white;
   font-weight: bold;
-  border-radius: 5px;
-  border-bottom: 3px solid black; 
+  border-radius: 3px; 
   
 }
 
@@ -81,7 +86,14 @@ body, html {
 }
 
 .input{
-  border: 2px solid black;
+  border: none;
+  width: calc(100% - 190px);
+  padding: 10px 20px;
+  border-radius: 3px;
+}
+
+.input2{
+  width: calc(80% - 195px);
   padding: 10px 20px;
   border-radius: 5px;
 }
@@ -124,10 +136,6 @@ table thead th {
 
 }
 
-
-.colPequeno {
-  width: 5%;
-}
 
 
 

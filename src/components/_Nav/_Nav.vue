@@ -17,11 +17,11 @@
 <style scoped>
 .barraTop {
     background-color: rgb(230,230,230);
-
 }
 
 nav {
     padding: 20px 20px 20px 0px;
+    margin-left: calc(35% - 100px);
     
 }
 

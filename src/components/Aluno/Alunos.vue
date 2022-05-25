@@ -6,8 +6,8 @@
       <input class="input" type="text" placeholder="Nome do aluno" v-model="nome"
     v-on:keyup.enter="addaluno()">
 
-      <input class="input" type="text" placeholder="Sobrenome" v-model="sobrenome"
-    v-on:keyup.enter="addaluno">
+      <!--input class="input2" type="text" placeholder="Sobrenome" v-model="sobrenome"
+    v-on:keyup.enter="addaluno"-->
 
       <button class="btn_add" @click="addaluno">
       Adicionar
@@ -21,7 +21,7 @@
       <thead>
         <th>ID</th>
         <th>Nome</th>
-        <th>sobrenome</th>
+        <!--th>sobrenome</!--th-->
         <th class="opt">Opçoes</th>
         
         
@@ -30,7 +30,7 @@
         <tr v-for="(aluno, index) in alunos" :key="index">
           <td>{{aluno.id}}</td>
           <td>{{aluno.nome}}</td>
-          <th>{{aluno.sobrenome}}</th>
+          <!--th>{{aluno.sobrenome}}</!--th-->
           <td>
             <button class="btn" @click="remover(aluno)">Remover
             </button>
@@ -116,8 +116,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.opt {
-  background-color: black;
+.celula {
+  margin-left: 500px;
 }
 
 </style>
