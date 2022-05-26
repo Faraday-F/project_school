@@ -2,14 +2,14 @@
   <div id="app">  
     <Nav></Nav>
     <div class="marginPrincipal">
-      <Sobre/>
+      <router-view></router-view>
     </div>    
   </div>
 </template>
 
 <script>
 import Alunos from './components/Aluno/Alunos.vue'
-import Nav from './components/_Nav/_Nav.vue'
+import Nav from './components/_nav/Nav.vue'
 import Professor from './components/Professor/Professor.vue'
 import Sobre from './components/Sobre/Sobre.vue'
 
@@ -105,6 +105,10 @@ table {
   width: 100%;
 }
 
+table tr td:hover {
+  background-color: aqua;
+}
+
 .header {
   justify-items: center;
   background-color: #eee;
@@ -119,7 +123,7 @@ table tr td{
   color: #3e5252;
 }
 
-table tr td:hover {
+/table tr td:hover {
   padding: 20px;
   font-size: 1.3em;
   background-color: #6ec6f5;
@@ -135,6 +139,8 @@ table thead th {
   text-align: center !important;
 
 }
+
+
 
 
 

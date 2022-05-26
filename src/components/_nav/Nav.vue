@@ -1,9 +1,9 @@
 <template>
     <div class="barraTop">
         <nav>
-            <a href="">Professores</a>
-            <a href="">Alunos</a>
-            <a href="">Sobre</a>
+            <router-link to="/Professores">Professores</router-link>
+            <router-link to="/alunos">Alunos</router-link>
+            <router-link to="/sobre">Sobre</router-link>
         </nav>
     </div>
 </template>

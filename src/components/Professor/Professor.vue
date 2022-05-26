@@ -23,9 +23,9 @@
         <th class="opt">Qte. Alunos</th>
       </thead>
       <tbody v-if="professores.length">
-        <tr v-for="(professor, index) in professores" :key="index">
+        <tr v-for="(professor, index) in professores" :key="index" class="cel">
           <td>{{ professor.id }}</td>
-          <td>{{ professor.nome }}</td>
+           <router-link to="/alunos" tag="td" style="cursor: pointer">{{ professor.nome }}</router-link> 
           <!--th>{{professor.sobrenome}}</!--th-->
           <td>
             3

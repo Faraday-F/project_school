@@ -28,6 +28,7 @@
       </thead>
       <tbody v-if="alunos.length">
         <tr v-for="(aluno, index) in alunos" :key="index">
+          
           <td>{{aluno.id}}</td>
           <td>{{aluno.nome}}</td>
           <!--th>{{aluno.sobrenome}}</!--th-->
