@@ -15,7 +15,7 @@
       <button class="btn_add" @click="addaluno">Adicionar</button>
     </div>
 
-    <table>
+    <table class="row">
       <thead>
         <th>ID</th>
         <th>Nome</th>
@@ -23,7 +23,7 @@
         <th class="opt">Qte. Alunos</th>
       </thead>
       <tbody v-if="professores.length">
-        <tr v-for="(professor, index) in professores" :key="index" class="cel">
+        <tr class="row" v-for="(professor, index) in professores" :key="index">
           <td>{{ professor.id }}</td>
            <router-link to="/alunos" tag="td" style="cursor: pointer">{{ professor.nome }}</router-link> 
           <!--th>{{professor.sobrenome}}</!--th-->

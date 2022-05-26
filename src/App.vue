@@ -56,13 +56,15 @@ body, html {
   color: white;
   font-weight: bold;
   border-radius: 5px;
-  border-bottom: 3px solid black; 
+  border-bottom: 3px solid black;
+  border-right: 3px solid black; 
 }
 
 .btn:hover{
   text-shadow: 1px 1px 1px black;
   margin-top: 3px;
   border-bottom: 1px solid black;
+  border-right: 1px solid black;
 
 }
 
@@ -105,7 +107,7 @@ table {
   width: 100%;
 }
 
-table tr td:hover {
+/table tr td:hover {
   background-color: aqua;
 }
 
@@ -114,6 +116,11 @@ table tr td:hover {
   background-color: #eee;
   
 }
+
+tr:hover td {
+  background:rgb(158, 234, 255);
+  color: wthite;
+  }
 
 table tr td{
   padding: 20px;

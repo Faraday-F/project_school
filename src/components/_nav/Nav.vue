@@ -37,4 +37,13 @@ nav a {
 
 
 }
+
+nav .router-link-exact-active {
+    background-color: black;
+    color: white;
+    border-bottom: 4px solid;
+    border-bottom-color: rgb(0, 0, 255);
+
+
+}
 </style>
