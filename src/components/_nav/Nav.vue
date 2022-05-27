@@ -1,7 +1,7 @@
 <template>
     <div class="barraTop">
         <nav>
-            <router-link to="/Professores">Professores</router-link>
+            <router-link to="/professores">Professores</router-link>
             <router-link to="/alunos">Alunos</router-link>
             <router-link to="/sobre">Sobre</router-link>
         </nav>
@@ -21,7 +21,8 @@
 
 nav {
     padding: 20px 20px 20px 0px;
-    margin-left: calc(35% - 100px);
+    margin-left: calc(50% - 165px);
+    margin-right: calc(50% - 165px);
     
 }
 
@@ -33,6 +34,7 @@ nav a {
     color: blue;
     font-weight: bold;
     margin-right: 15px;
+    
 
 
 

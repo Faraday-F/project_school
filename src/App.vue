@@ -55,9 +55,12 @@ body, html {
   cursor: pointer;
   color: white;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 25px;
   border-bottom: 3px solid black;
   border-right: 3px solid black; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn:hover{
@@ -107,9 +110,7 @@ table {
   width: 100%;
 }
 
-/table tr td:hover {
-  background-color: aqua;
-}
+
 
 .header {
   justify-items: center;
@@ -130,14 +131,7 @@ table tr td{
   color: #3e5252;
 }
 
-/table tr td:hover {
-  padding: 20px;
-  font-size: 1.3em;
-  background-color: #6ec6f5;
-  margin-bottom: 2px;
-  color: #3e5252;
 
-}
 
 table thead th {
   background-color: rgb(129, 184, 255) !important;

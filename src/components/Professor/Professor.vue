@@ -1,21 +1,9 @@
 <template>
   <div>
     <Titulo texto="Professores" />
-    <div>
-      <input
-        class="input"
-        type="text"
-        placeholder="Nome do aluno"
-        v-model="nome"
-        v-on:keyup.enter="addaluno()"/>
+    
 
-      <!--input class="input2" type="text" placeholder="Sobrenome" v-model="sobrenome"
-    v-on:keyup.enter="addaluno"-->
-
-      <button class="btn_add" @click="addaluno">Adicionar</button>
-    </div>
-
-    <table class="row">
+    <table>
       <thead>
         <th>ID</th>
         <th>Nome</th>
@@ -23,7 +11,7 @@
         <th class="opt">Qte. Alunos</th>
       </thead>
       <tbody v-if="professores.length">
-        <tr class="row" v-for="(professor, index) in professores" :key="index">
+        <tr  v-for="(professor, index) in professores" :key="index">
           <td>{{ professor.id }}</td>
            <router-link to="/alunos" tag="td" style="cursor: pointer">{{ professor.nome }}</router-link> 
           <!--th>{{professor.sobrenome}}</!--th-->
@@ -48,13 +36,20 @@ export default {
     },
     data() {
         return {
-            professores: [
-                {id: 1, nome:'Vine'},
-                {id: 2, nome:'Giovana'},
-                {id: 3, nome:'Chika'}
-            ]
-        }
-    }
+            professores: []
+        };
+    },
+    created() {
+    this.$http
+    .get('http://localhost:3000/professores')
+    .then(res => res.json())
+    .then(Professor => (this.professores = Professor))
+    
+
+  },
+
+  props: {}
+
 };
 </script>
 
