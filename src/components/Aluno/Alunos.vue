@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Titulo class="header" texto="Alunos"/>
+    <Titulo :texto="professorid !== undefined ? 'Professor: ' + professor.nome :  'Todos os alunos'"/>
     <div>
 
       <input class="input" type="text" placeholder="Nome do aluno" v-model="nome"
@@ -57,16 +57,28 @@ export default {
   data() {
     return{
       titulo: 'Alunos',
+      professorid: this.$route.params.prof_id,
+      professor: {},
       nome: '',
       sobrenome:'',
       alunos: []
     };
   },
   created() {
+    this.carregarProfessores();
+    if (this.professorid) {
     this.$http
-    .get('http://localhost:3000/alunos')
-    .then(res => res.json())
-    .then(alunos => this.alunos = alunos)
+      .get('http://localhost:3000/alunos?professor.id=' + this.professorid)
+      .then(res => res.json())
+      .then(alunos => this.alunos = alunos)
+    }
+    else {
+    this.$http
+      .get('http://localhost:3000/alunos')
+      .then(res => res.json())
+      .then(alunos => this.alunos = alunos)
+    }
+    
 
   },
 
@@ -108,6 +120,14 @@ export default {
       
 
     },
+    carregarProfessores() {
+      this.$http
+        .get("http://localhost:3000/Professores/" + this.professorid)
+        .then((res) => res.json())
+        .then((Professor) => {
+          this.professor = Professor;
+        });
+    }
   },
   
 
