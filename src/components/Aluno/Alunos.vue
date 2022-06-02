@@ -33,7 +33,7 @@
         <tr v-for="(aluno, index) in alunos" :key="index">
           <td>{{ aluno.id }}</td>
           <router-link :to="`/alunodetalhe/${aluno.id}`" tag="td" style="cursor:pointer">
-            {{ aluno.nome }} {{aluno.sobrenome}}
+            {{aluno.nome}} {{aluno.sobrenome}}
           </router-link>
             
             
@@ -100,8 +100,9 @@ export default {
         .post("http://localhost:3000/alunos", _aluno)
         .then((res) => res.json())
         .then((alunoRetornado) => {
-          this.alunos.push(alunoRetornado);
+          this.alunos.push(aluno);
           this.nome = "";
+          this.sobrenome = "";
         });
     },
 

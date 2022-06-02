@@ -140,6 +140,9 @@ table thead th {
   text-align: center !important;
 
 }
+.colPequeno {
+  width: 5%;
+}
 
 
 
